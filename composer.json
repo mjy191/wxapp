@@ -1,0 +1,22 @@
+{
+    "name": "mjy191/wxapp",
+    "description": "微信小程序相关接口，获取openid、解密手机号码、微信二维码",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mjy191\\Wxapp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MengJinYi",
+            "email": "mjy191@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "mjy191/enum": "1.*.*",
+        "mjy191/my-curl": "1.*.*",
+        "mjy191/tools": "1.*.*",
+    }
+}
