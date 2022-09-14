@@ -17,6 +17,6 @@
     "require": {
         "mjy191/enum": "1.*.*",
         "mjy191/my-curl": "1.*.*",
-        "mjy191/tools": "1.*.*",
+        "mjy191/tools": "1.*.*"
     }
 }
