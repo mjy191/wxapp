@@ -13,7 +13,6 @@
             "email": "mjy191@163.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "mjy191/enum": "1.*.*",
         "mjy191/my-curl": "1.*.*",
