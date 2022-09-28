@@ -59,6 +59,8 @@ class Wxapp {
         if (isset($response['errcode'])) {
             if ($response['errcode'] == '40001') {
                 $this->delAccessToken();
+                // 删除redis缓存的access_token
+                $this->getwxacodeunlimit($param);
             }
             throw new ApiException('生产二维码错误,请刷新', Enum::erCodeSystem);
         }
