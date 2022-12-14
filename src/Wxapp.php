@@ -127,4 +127,30 @@ class Wxapp {
         }
         return $dataObj;
     }
+
+    /**
+     * 发送订阅消息
+     * @param $param
+     * @return bool|string
+     * @throws ApiException
+     */
+    public function templateMsg($param){
+        foreach ($param['data'] as $key=>$val){
+            if(stripos($key,'thing')!==false){
+                $param['data'][$key]['value'] = mb_substr($val['value'],0,20);
+            }
+            if(stripos($key,'number')!==false){
+                $param['data'][$key]['value'] = mb_substr($val['value'],0,32);
+            }
+            if(stripos($key,'letter')!==false){
+                $param['data'][$key]['value'] = mb_substr($val['value'],0,32);
+            }
+            if(stripos($key,'name')!==false){
+                $param['data'][$key]['value'] = mb_substr($val['value'],0,10);
+            }
+        }
+        $param['lang'] = 'zh_CN';
+        $url = 'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token='.$this->getAccessToken();
+        return MyCurl::send($url,'post',json_encode($param,JSON_UNESCAPED_UNICODE));
+    }
 }
